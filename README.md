@@ -21,6 +21,7 @@ Why not.
 
 ```bash
 # build and just open index.html in your browser, it's not that deep
+npm install
 npm run build
 open index.html
 ```

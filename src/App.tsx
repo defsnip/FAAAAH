@@ -13,12 +13,14 @@ export default function App() {
       .then(() => console.log('Playback started'))
       .catch(err => console.error('Playback failed:', err));
   }, []);
-  const triggerArcade = useCallback(() => {
+  const triggerArcade = useCallback(async () => {
     const arcade= new Audio('/arcade.wav');
     arcade.volume = 0.1;
     arcade.play()
-      .then(() => window.location.href = 'https://github.com/defsnip/faaaah')
+      .then(() => console.log('Arcade Playback started'))
       .catch(err => console.error('Playback failed:', err));
+      await new Promise(resolve => setTimeout(resolve, 900)); // Wait for arcade sound to play
+    window.location.href = 'https://github.com/defsnip/faaaah'
   }, []);
 
   return (
