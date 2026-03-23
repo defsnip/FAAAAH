@@ -7,9 +7,17 @@ export default function App() {
 
   const triggerFaaah = useCallback(() => {
     setIsFaaahing(true);
-    const audio = new Audio('/fah.wav');
-    audio.play()
+    const fah = new Audio('/fah.wav');
+    const arcade= new Audio('/arcade.wav');
+    fah.play()
       .then(() => console.log('Playback started'))
+      .catch(err => console.error('Playback failed:', err));
+  }, []);
+  const triggerArcade = useCallback(() => {
+    const arcade= new Audio('/arcade.wav');
+    arcade.volume = 0.1;
+    arcade.play()
+      .then(() => window.location.href = 'https://github.com/defsnip/faaaah')
       .catch(err => console.error('Playback failed:', err));
   }, []);
 
@@ -70,7 +78,7 @@ export default function App() {
             To install as an app:<br />
             Tap <span className="text-white font-bold">Menu</span> then <span className="text-white font-bold">"Add to Home Screen"</span>
             <p className="text-tomato font-bold">
-              <a className='font-instrument-serif lowercase' href="http://github.com/defsnip/faaaah"> open source.</a></p>
+              <p className='font-instrument-serif lowercase cursor-pointer' onClick={triggerArcade}> open source.</p></p>
           </p>
         </motion.div>
       </div>

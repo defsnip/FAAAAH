@@ -1,6 +1,8 @@
 # FAAAAH 🔊
 
-A website. There's a button. You click it. It goes **FAAAAH**.
+
+
+A website. There's a button. You click it. It goes [**FAAAAH**](https://faaaah.vercel.app).
 That's it. That's the whole thing.
 
 ## Why?
@@ -18,7 +20,8 @@ Why not.
 ## Running locally
 
 ```bash
-# just open index.html in your browser, it's not that deep
+# build and just open index.html in your browser, it's not that deep
+npm run build
 open index.html
 ```
 
