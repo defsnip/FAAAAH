@@ -68,6 +68,8 @@ audio.play()
           <p className="text-zinc-400 text-[10px] leading-relaxed uppercase tracking-wider">
             To install as an app:<br/>
             Tap <span className="text-white font-bold">Menu</span> then <span className="text-white font-bold">"Add to Home Screen"</span>
+            <p className="text-tomato font-bold">
+            <a href="http://github.com/defsnip/faaaah">Source.</a></p>
           </p>
         </motion.div>
       </div>
