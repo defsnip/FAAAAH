@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Volume2 } from 'lucide-react';
+import { Volume2} from 'lucide-react';
 
 export default function App() {
   const [isFaaahing, setIsFaaahing] = useState(false);
@@ -8,12 +8,13 @@ export default function App() {
   const triggerFaaah = useCallback(() => {
     setIsFaaahing(true);
     const audio = new Audio('/fah.wav');
-audio.play()
-  .then(() => console.log('Playback started'))
-  .catch(err => console.error('Playback failed:', err));   
+    audio.play()
+      .then(() => console.log('Playback started'))
+      .catch(err => console.error('Playback failed:', err));
   }, []);
 
   return (
+
     <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 overflow-hidden">
       {/* Background Atmosphere */}
       <AnimatePresence>
@@ -34,22 +35,22 @@ audio.play()
           className="text-center"
         >
           <h1 className="text-6xl font-black tracking-tighter italic text-red-500 mb-2">FAAAAAH</h1>
-          <p className="text-zinc-500 text-xs uppercase tracking-[0.3em]">Sound Button</p>
+          <p className="text-zinc-500 text-xs uppercase tracking-[0.3em]">Button</p>
         </motion.div>
 
         {/* Main Interaction Area */}
         <div className="relative w-64 h-64">
           <motion.button
             whileTap={{ scale: 0.9 }}
-            animate={isFaaahing ? { 
+            animate={isFaaahing ? {
               scale: [1, 1.1, 1],
               rotate: [0, -3, 3, -3, 0]
             } : {}}
             onClick={triggerFaaah}
             className={`
               absolute inset-0 rounded-full flex flex-col items-center justify-center gap-4 transition-all duration-300
-              ${isFaaahing 
-                ? 'bg-red-500 shadow-[0_0_80px_rgba(239,68,68,0.6)]' 
+              ${isFaaahing
+                ? 'bg-red-500 shadow-[0_0_80px_rgba(239,68,68,0.6)]'
                 : 'bg-zinc-900 border-4 border-zinc-800 hover:bg-zinc-800'}
             `}
           >
@@ -59,17 +60,17 @@ audio.play()
         </div>
 
         {/* Instructions for PWA */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
           className="mt-12 p-4 bg-zinc-900/50 rounded-2xl border border-white/5 text-center backdrop-blur-sm"
         >
           <p className="text-zinc-400 text-[10px] leading-relaxed uppercase tracking-wider">
-            To install as an app:<br/>
+            To install as an app:<br />
             Tap <span className="text-white font-bold">Menu</span> then <span className="text-white font-bold">"Add to Home Screen"</span>
             <p className="text-tomato font-bold">
-            <a href="http://github.com/defsnip/faaaah">Source.</a></p>
+              <a className='font-instrument-serif lowercase' href="http://github.com/defsnip/faaaah"> open source.</a></p>
           </p>
         </motion.div>
       </div>

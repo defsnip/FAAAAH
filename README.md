@@ -13,6 +13,8 @@ Why not.
 2. Click the button
 3. FAAAAH
 
+![ss](preview.png)
+
 ## Running locally
 
 ```bash
